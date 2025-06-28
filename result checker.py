@@ -1,4 +1,4 @@
-with open("output.txt") as f1, open("output1.txt") as f2:
+with open("submission.csv") as f1, open("output1.txt") as f2:
     list1 = [line.strip() for line in f1]
     list2 = [line.strip() for line in f2]
 

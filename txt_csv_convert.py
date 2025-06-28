@@ -1,15 +1,10 @@
 import pandas as pd
 
-# ===== Configuration =====
-input_txt = "output1.txt"
-output_csv = "submission.csv"
-delimiter = ","
+with open("output1.txt", "r") as file:
+    lines = [line.strip() for line in file]
 
-# ===== TXT to CSV Conversion =====
-def txt_to_csv(input_txt, output_csv, delimiter=","):
-    df = pd.read_csv(input_txt, delimiter=delimiter, header=None)
-    df.to_csv(output_csv, index=False)
-    print(f"✅ Successfully converted '{input_txt}' to '{output_csv}'")
+# Create a DataFrame without column name
+df = pd.DataFrame(lines)
 
-# ===== Run =====
-txt_to_csv(input_txt, output_csv, delimiter)
+# Save as CSV without index and without header
+df.to_csv("submission.csv", index=False, header=False)
